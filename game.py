@@ -29,18 +29,6 @@ anim = Animator( animations = {
 player.collider = 'box'
 player.runspeed = 0.1
 
-def playerShrink():
-  while player.scale_x > 0:
-    player.scale_x -= 0.1
-  while player.scale_y > 0:
-    player.scale_y -= 0.1
-
-playerFalling = Sequence(
-    1,
-    Func(playerShrink(), duration=1),
-    loop=True
-    )
-
 
 def deathByFalling(playerX,playerY):
   if playerX > 200 or playerX < 0:

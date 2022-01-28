@@ -21,10 +21,10 @@ generateGeometry()
 # Player
 #playerCollider = Entity(model='cube', color=color.blue, scale_x=6, scale_y=6, scale_z=0, position=(65,120,-1), collider='box')
 player = Entity(position=(100,100,-1), scale_x=6, scale_y=6)
-man = Animation("assets\walking", parent = player, autoplay=False)
+
 anim = Animator( animations = {
   'idle': Entity(model='quad',parent=player, scale=0.75,texture='assets\walking_0', tag='player'),
-  'walking': man,
+  'walking': Animation("assets\walking", parent = player, autoplay=False),
 })
 player.collider = 'box'
 player.runspeed = 0.1
